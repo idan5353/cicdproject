@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo "Installing source NPM dependencies..."
+      - npm install || { echo 'NPM install failed'; exit 1; }
+  build:
+    commands:
+      - echo "Build started on `date`"
+      - echo "Running build..."
+      - npm run build || { echo 'Build failed'; exit 1; }
+artifacts:
+  files:
+    - '**/*'
