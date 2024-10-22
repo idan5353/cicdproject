@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14  # גרסה של Node.js
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build  # לא נדרש כאן, אפשר להשאיר ריק או להסיר
+artifacts:
+  files:
+    - '**/*'  # כל הקבצים שברצונך לכלול בארטיפקטים
